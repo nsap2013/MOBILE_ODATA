@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ * 
+ * (c) Copyright 2009-2013 SAP AG. All rights reserved
+ */
+jQuery.sap.declare("sap.m.IconTabBarRenderer");sap.m.IconTabBarRenderer={};
+sap.m.IconTabBarRenderer.render=function(r,c){var i=c.getItems();r.write("<div ");r.addClass("sapMITB");r.writeControlData(c);r.writeClasses();r.write(">");r.write("<div class=\"sapMITBHead\">");jQuery.each(i,function(I,o){r.write("<div ");r.writeElementData(o);r.addClass("sapMIT");if(o instanceof sap.m.IconTabFilter){if(o.getShowAll()){r.addClass("sapMITAll")}else{r.addClass("sapMITFilter")}if(o.getCount()=="0"){r.addClass("sapMITDisabled")}r.writeClasses();r.write(">");if(!o.getShowAll()){var s="sapMITFilterIcon sapMITFilter"+o.getIconColor();r.writeIcon(o.getIcon(),s)}r.write("<span class=\"sapMITDesc\">");r.write("<span class=\"sapMITCount\">");r.writeEscaped(o.getCount());r.write("</span>");r.write("<span class=\"sapMITText\">");r.writeEscaped(o.getText());r.write("</span>");r.write("</span>")}else if(o instanceof sap.m.IconTabSeparator){r.addClass("sapMITSep");if(!o.getIcon()){r.addClass("sapMITSepLine")}r.writeClasses();r.write(">");if(o.getIcon()){r.writeIcon(o.getIcon(),"sapMITSepIcon")}}r.write("</div>")});r.write("</div>");if(c.getContent()){r.write("<div id=\""+c.getId()+"-arrow\" class=\"sapMITBArrow\"></div>");r.write("<div id=\""+c.getId()+"-content\" class=\"sapMITBContent\">");r.renderControl(c.getContent());r.write("</div>")}r.write("</div>")};
