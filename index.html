@@ -6,10 +6,12 @@
  
 	<title>Mobile OData Demo</title>
  
-	<script id='sap-ui-bootstrap'
-		src='./resources/sap-ui-core.js'
-		data-sap-ui-theme='sap_mvi'
-		data-sap-ui-libs='sap.m'>
+	<script id="sap-ui-bootstrap"
+		src="./resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_mvi"
+		data-sap-ui-libs="sap.m"
+		data-sap-ui-xx-test-mobile = "true"
+	 	data-sap-ui-xx-fakeOS = "android">
 	</script>
  <script src="phonegap.js"></script>
 	<script>
@@ -91,16 +93,7 @@
 					]
 			});
  
-			// data access
-			function getServiceUrl(sServiceUrl) {
-				var sOrigin = window.location.protocol + "//" + window.location.hostname
-						+ (window.location.port ? ":" + window.location.port : "");
-				if (!jQuery.sap.startsWith(sServiceUrl, sOrigin)) {
-					return "proxy/" + sServiceUrl.replace("://", "/");
-				} else {
-					return sServiceUrl.substring(sOrigin.length);
-				}
-			};
+		
 			var sServiceUrl = "http://services.odata.org/Northwind/Northwind.svc/Products/";
 			sServiceUrl = getServiceUrl(sServiceUrl);
 			var busyDialog = (busyDialog) ? busyDialog : new sap.m.BusyDialog('busyDialog',{text:'Loading Northwind Data', title: 'Loading'});
