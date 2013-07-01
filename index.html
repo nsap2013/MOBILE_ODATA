@@ -6,14 +6,15 @@
 
 	<title>Mobile OData Demo</title>
 
-	<script id='sap-ui-bootstrap'
-		src='./resources/sap-ui-core.js'
-		data-sap-ui-theme='sap_mvi'
-		data-sap-ui-libs='sap.m'
+	<script id="sap-ui-bootstrap"
+		src="./resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_mvi"
+		data-sap-ui-libs="sap.m"
 		data-sap-ui-xx-test-mobile = "true"
 	 	data-sap-ui-xx-fakeOS = "android">
 	</script>
-<script ="phonegap.js"></script>
+<script src="phonegap.js"></script>
+
 	<script>
 		(function() {
 			var app = new sap.m.App("ODataDemo");
@@ -23,14 +24,14 @@
 				title : "List Overview",
 				footer : new sap.m.Bar({
 					contentMiddle : [ new sap.m.Label({
-						text : "Mobile OData Demo"
+						text : "Sample Mobile OData app Demo"
 					}) ]
 				})
 			});
 
 			var Bar = new sap.m.Bar({ 
 				contentLeft: [],	
-				contentMiddle: [new sap.m.Label('BarTitle', {text: "Products"})],
+				contentMiddle: [new sap.m.Label('BarTitle', {text: "Available Product Listing"})],
 				contentRight: []
 			});
 			appStartPage.setCustomHeader(Bar);
